@@ -20,4 +20,8 @@ contract BankContract {
         (bool success, ) = payable(msg.sender).call{value: amount}("");
         require(success, "Transfer failed");
     }
+
+        function getContractBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
 }
